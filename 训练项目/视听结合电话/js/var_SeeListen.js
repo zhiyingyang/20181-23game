@@ -102,3 +102,6 @@ var singleUseTime=new Array();
 var WrongSort=new Array();
 
 
+//等级数组
+var levelArray=new Array();
+

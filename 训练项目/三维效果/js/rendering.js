@@ -95,23 +95,24 @@ function resetLever() {
                                 }
                                 //判断结果
                                   if(leverNeddCheckNumber.length!=clickNum+1){
-                                     if( leverNeddCheckNumber[clickNum]!=thisEleNames){
+                                     if( leverNeddCheckNumber[clickNum]!=thisEleNames){ //正确
                                          $(".phoneNumList li").unbind();
                                         setTimeout(function(){$(".Tips").html(nextcz).show(50).delay(1000).hide(50)},100);
                                         setTimeout(function(){
                                            if(leverFaileCount==2 && lever==1){
                                             stop();
-                                                   $(".phoneNumList,.gameNum").css("display","none");
+                                                  $(".phoneNumList,.gameNum").css("display","none");
                                                   $(".allEnd").css("display","block");
                                                   $(".endTip").html("训练结束");
                                                   $('.endS').html(successNum);
                                                    $('.endF').html(faildNum);
                                                    $('.endT').html(total);
                                                    $('.glever').html(endZlever);
-                                                    $('.endlever').html(lever);
+                                                   $('.endlever').html(lever);
                                                    $('.cslever').html(cslever);
                                                   return;
                                             }
+
                                             if(total==10){
                                               stop();
                                               $(".phoneNumList,.gameNum").css("display","none");
@@ -132,18 +133,13 @@ function resetLever() {
                                         stopGameDJS();
                                         leverFaileCount++;
                                         faildNum++;
-                                        leverPassCount=leverPassCount-1;                      
+                                        leverPassCount=leverPassCount-1;
                                          total=successNum+faildNum;
-                                         syNum=syNumall-total;                        
+                                         syNum=syNumall-total;
                                         if(leverPassCount<0){
                                             leverPassCount=0
                                         }
 
-                                         WrongSort.push(false);
-                                         singleUseTime.push(alllistenNum);
-
-                                           alllistenNumall=alllistenNumall+alllistenNum;
-                                           ErroneousTime = ErroneousTime+alllistenNum;
                                              if(alllistenNumall>60){
                                                  alllistenNumzg = parseInt(alllistenNumall/60)+"分";
                                              }else{
@@ -152,11 +148,19 @@ function resetLever() {
                                              if(lever>cslever){
                                                endZlever = lever;
                                             }
+
                                         console.log(alllistenNum+"总用时");
                                         CorrectRate = (successNum/10)*100+".00%";
-                                        $('.sycsNum').html(syNum);
+                                        $('.sycsNum').text(syNum);
                                         document.getElementById('allScore').innerHTML = score;
                                         document.getElementById('LeverNumB').innerHTML = faildNum;
+
+                                         WrongSort.push(true);
+                                         singleUseTime.push(alllistenNum);
+                                         levelArray.push(lever);
+
+                                         alllistenNumall=alllistenNumall+alllistenNum;
+                                         ErroneousTime = ErroneousTime+alllistenNum;
                                      }
                                   }else{
                                      if( leverNeddCheckNumber[clickNum]==thisEleNames){
@@ -199,7 +203,7 @@ function resetLever() {
                                         leverFaileCount=leverFaileCount-1;
                                         score+= 10;
                                          total=successNum+faildNum;
-                                         syNum=syNumall-total; 
+                                         syNum=syNumall-total;
                                         if(score>180){
                                             score=180
                                         }
@@ -208,8 +212,11 @@ function resetLever() {
                                         }
                                          WrongSort.push(true);
                                          singleUseTime.push(alllistenNum);
+                                         levelArray.push(lever);
+
                                            alllistenNumall=alllistenNumall+alllistenNum;
                                            CorrectTime = CorrectTime+alllistenNum;
+
                                              if(alllistenNumall>60){
                                                  alllistenNumzg = parseInt(alllistenNumall/60)+"分";
                                              }else{
@@ -220,7 +227,7 @@ function resetLever() {
                                                endZlever = lever;
                                             }
                                         console.log(alllistenNum+"总用时");
-                                        $('.sycsNum').html(syNum);
+                                        $('.sycsNum').text(syNum);
                                         document.getElementById('allScore').innerHTML = score;
                                         document.getElementById('LeverNumT').innerHTML = successNum;
                                      }else{
@@ -261,25 +268,33 @@ function resetLever() {
                                         stopGameDJS();
                                         leverFaileCount++;
                                         faildNum++;
-                                        leverPassCount=leverPassCount-1;                       
+                                        leverPassCount=leverPassCount-1;
                                          total=successNum+faildNum;
-                                         syNum=syNumall-total;                      
+                                         syNum=syNumall-total;
                                         if(leverPassCount<0){
                                             leverPassCount=0
                                         }
-                                          alllistenNumall=alllistenNumall+alllistenNum;
-                                          ErroneousTime = ErroneousTime+alllistenNum;
-                                             if(alllistenNumall>60){
-                                                 alllistenNumzg = parseInt(alllistenNumall/60)+"分";
-                                             }else{
-                                                 alllistenNumzg = alllistenNumall%60+"秒";
-                                             }
+
+                                         WrongSort.push(false);
+                                         singleUseTime.push(alllistenNum);
+                                         levelArray.push(lever);
+
+                                         alllistenNumall=alllistenNumall+alllistenNum;
+                                         ErroneousTime = ErroneousTime+alllistenNum;
+
+                                         if(alllistenNumall>60){
+                                             alllistenNumzg = parseInt(alllistenNumall/60)+"分";
+                                         }else{
+                                             alllistenNumzg = alllistenNumall%60+"秒";
+                                         }
+
                                           CorrectRate = (successNum/10)*100+".00%";
                                           if(lever>cslever){
                                                endZlever = lever;
                                             }
+
                                         console.log(alllistenNum+"总用时");
-                                        $('.sycsNum').html(syNum);
+                                        $('.sycsNum').text(syNum);
                                         document.getElementById('allScore').innerHTML = score;
                                         document.getElementById('LeverNumB').innerHTML = faildNum;
                                         }
@@ -287,6 +302,7 @@ function resetLever() {
                                   }
                             })
                         }
+
                 },1900)
             },timeNum)
         });
@@ -417,6 +433,9 @@ function resetLever() {
             syNum=syNumall-total;
             $('.sycsNum').html(syNumall);
 
+            WrongSort.push(false);
+            singleUseTime.push(alllistenNum);
+            levelArray.push(lever);
 
             document.getElementById("time").innerHTML=wait;
             document.getElementById('LeverNumB').innerHTML = faildNum;

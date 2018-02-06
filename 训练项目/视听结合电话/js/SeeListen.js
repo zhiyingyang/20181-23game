@@ -189,9 +189,12 @@ function genLever(lever) {
                                         $('.sycsNum').html(syNum);
                                         document.getElementById('allScore').innerHTML = score;
                                         document.getElementById('LeverNumB').innerHTML = faildNum;
-                                    WrongSort.push(false);
-                                    singleUseTime.push(alllistenNum);  alllistenNumall=alllistenNumall+alllistenNum;
-                                         ErroneousTime = ErroneousTime+alllistenNum;
+                                    WrongSort.push(true);
+                                    singleUseTime.push(alllistenNum);
+                                    levelArray.push(lever);
+
+                                    alllistenNumall=alllistenNumall+alllistenNum;
+                                    ErroneousTime = ErroneousTime+alllistenNum;
                                          if(alllistenNumall>60){
                                              alllistenNumzg = parseInt(alllistenNumall/60)+"分";
                                          }else{
@@ -290,8 +293,11 @@ function genLever(lever) {
                                         document.getElementById('allScore').innerHTML = score;
                                         document.getElementById('LeverNumT').innerHTML = successNum;
                                     WrongSort.push(true);
-                                    singleUseTime.push(alllistenNum);       alllistenNumall=alllistenNumall+alllistenNum;
-                                         CorrectTime = CorrectTime+alllistenNum;
+                                    singleUseTime.push(alllistenNum);
+                                    levelArray.push(lever);
+
+                                    alllistenNumall=alllistenNumall+alllistenNum;
+                                    ErroneousTime = ErroneousTime+alllistenNum;
                                          if(alllistenNumall>60){
                                              alllistenNumzg = parseInt(alllistenNumall/60)+"分";
                                          }else{
@@ -349,9 +355,12 @@ function genLever(lever) {
                                         $('.sycsNum').html(syNum);
                                         document.getElementById('allScore').innerHTML = score;
                                         document.getElementById('LeverNumB').innerHTML = faildNum;
-                                    WrongSort.push(false);
-                                    singleUseTime.push(alllistenNum);    alllistenNumall=alllistenNumall+alllistenNum;
-                                         ErroneousTime = ErroneousTime+alllistenNum;
+                                    WrongSort.push(true);
+                                    singleUseTime.push(alllistenNum);
+                                    levelArray.push(lever);
+
+                                    alllistenNumall=alllistenNumall+alllistenNum;
+                                    ErroneousTime = ErroneousTime+alllistenNum;
                                          if(alllistenNumall>60){
                                              alllistenNumzg = parseInt(alllistenNumall/60)+"分";
                                          }else{

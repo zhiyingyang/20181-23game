@@ -90,3 +90,6 @@ var allFruits_cn = ["小鸟", "蝴蝶", "牛", "大象", "鱼", "狐狸", "青�
 var singleUseTime=new Array();
 //错误数组
 var WrongSort=new Array();
+//等级数组
+var levelArray=new Array();
+

@@ -232,10 +232,15 @@ function GenHTML(leverAllFruit) {
                         syNum=syNumall-total;
                         if(leverPassCount<0){
                             leverPassCount=0
-                        }    WrongSort.push(false);
+                        }
+                    WrongSort.push(true);
                     singleUseTime.push(alllistenNum);
-                        alllistenNumall=alllistenNumall+alllistenNum;
-                        ErroneousTime = ErroneousTime+alllistenNum;
+                    levelArray.push(lever);
+
+                    alllistenNumall=alllistenNumall+alllistenNum;
+                    ErroneousTime = ErroneousTime+alllistenNum;
+
+
                      if(alllistenNumall>60){
                          alllistenNumzg = parseInt(alllistenNumall/60)+"分";
                      }else{
@@ -324,9 +329,11 @@ function GenHTML(leverAllFruit) {
 
                     WrongSort.push(true);
                     singleUseTime.push(alllistenNum);
+                    levelArray.push(lever);
 
-                     alllistenNumall=alllistenNumall+alllistenNum;
-                     CorrectTime = CorrectTime+alllistenNum;
+                    alllistenNumall=alllistenNumall+alllistenNum;
+                    ErroneousTime = ErroneousTime+alllistenNum;
+
                      if(alllistenNumall>60){
                          alllistenNumzg = parseInt(alllistenNumall/60)+"分";
                      }else{
@@ -382,10 +389,15 @@ function GenHTML(leverAllFruit) {
                      syNum=syNumall-total;
                     if(leverPassCount<0){
                         leverPassCount=0
-                    }    WrongSort.push(false);
+                    }
+
+                    WrongSort.push(true);
                     singleUseTime.push(alllistenNum);
-                      alllistenNumall=alllistenNumall+alllistenNum;
-                      ErroneousTime = ErroneousTime+alllistenNum;
+                    levelArray.push(lever);
+
+                    alllistenNumall=alllistenNumall+alllistenNum;
+                    ErroneousTime = ErroneousTime+alllistenNum;
+
                      if(alllistenNumall>60){
                          alllistenNumzg = parseInt(alllistenNumall/60)+"分";
                      }else{

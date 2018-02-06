@@ -94,3 +94,6 @@ var allNumber_cn = ["0","1", "2", "3", "4", "5", "6", "7", "8", "9","10","11"];
 var singleUseTime=new Array();
 //错误数组
 var WrongSort=new Array();
+
+//等级数组
+var levelArray=new Array();

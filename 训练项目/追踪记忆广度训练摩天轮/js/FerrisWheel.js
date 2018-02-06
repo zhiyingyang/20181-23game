@@ -142,7 +142,6 @@ function genLever(lever) {
                         setTimeout(function(){
                             if(leverFaileCount==2 && lever==1){
                               stop();
-
                                $(".phoneNumListWrap").css("display","none");
                               $(".allEnd").css("display","block");
                               $(".endTip").html("训练结束");
@@ -154,6 +153,7 @@ function genLever(lever) {
                                $('.cslever').html(cslever);
                               return;
                             }
+
                             if(total==10){
                               stop();
                               $(".phoneNumListWrap").css("display","none");
@@ -179,10 +179,12 @@ function genLever(lever) {
                              syNum=syNumall-total;                                  
                             if(leverPassCount<0){
                                 leverPassCount=0
-                            }    WrongSort.push(false);
+                            }         WrongSort.push(true);
                         singleUseTime.push(alllistenNum);
-                            alllistenNumall=alllistenNumall+alllistenNum;
-                            ErroneousTime = ErroneousTime+alllistenNum;
+                        levelArray.push(lever);
+
+                        alllistenNumall=alllistenNumall+alllistenNum;
+                        ErroneousTime = ErroneousTime+alllistenNum;
                              if(alllistenNumall>60){
                                  alllistenNumzg = parseInt(alllistenNumall/60)+"分";
                              }else{
@@ -276,10 +278,14 @@ function genLever(lever) {
                                 }
                             if(leverFaileCount<0){
                                 leverFaileCount=0
-                            } WrongSort.push(true);
-                        singleUseTime.push(alllistenNum);
-                              alllistenNumall=alllistenNumall+alllistenNum;
-                              CorrectTime = CorrectTime+alllistenNum;
+                            }
+
+                            WrongSort.push(true);
+                            singleUseTime.push(alllistenNum);
+                            levelArray.push(lever);
+                            alllistenNumall=alllistenNumall+alllistenNum;
+                            ErroneousTime = ErroneousTime+alllistenNum;
+
                              if(alllistenNumall>60){
                                  alllistenNumzg = parseInt(alllistenNumall/60)+"分";
                              }else{
@@ -337,10 +343,13 @@ function genLever(lever) {
                              syNum=syNumall-total;                                 
                             if(leverPassCount<0){
                                 leverPassCount=0
-                            }    WrongSort.push(false);
+                            }
+                        WrongSort.push(true);
                         singleUseTime.push(alllistenNum);
-                             alllistenNumall=alllistenNumall+alllistenNum;
-                             ErroneousTime = ErroneousTime+alllistenNum;
+                        levelArray.push(lever);
+
+                        alllistenNumall=alllistenNumall+alllistenNum;
+                        ErroneousTime = ErroneousTime+alllistenNum;
                              if(alllistenNumall>60){
                                  alllistenNumzg = parseInt(alllistenNumall/60)+"分";
                              }else{

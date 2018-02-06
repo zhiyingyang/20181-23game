@@ -156,10 +156,12 @@ function genLever(lever) {
                              syNum=syNumall-total;                                 
                             if(leverPassCount<0){
                                 leverPassCount=0
-                            }    WrongSort.push(false);
+                            }          WrongSort.push(true);
                         singleUseTime.push(alllistenNum);
-                             alllistenNumall=alllistenNumall+alllistenNum;
-                             ErroneousTime = ErroneousTime+alllistenNum;
+                        levelArray.push(lever);
+
+                        alllistenNumall=alllistenNumall+alllistenNum;
+                        ErroneousTime = ErroneousTime+alllistenNum;
                              if(alllistenNumall>60){
                                  alllistenNumzg = parseInt(alllistenNumall/60)+"分";
                              }else{
@@ -244,10 +246,12 @@ function genLever(lever) {
                                 }
                             if(leverFaileCount<0){
                                 leverFaileCount=0
-                            }    WrongSort.push(true);
+                            }          WrongSort.push(true);
                         singleUseTime.push(alllistenNum);
-                             alllistenNumall=alllistenNumall+alllistenNum;
-                             CorrectTime = CorrectTime+alllistenNum;
+                        levelArray.push(lever);
+
+                        alllistenNumall=alllistenNumall+alllistenNum;
+                        ErroneousTime = ErroneousTime+alllistenNum;
                              if(alllistenNumall>60){
                                  alllistenNumzg = parseInt(alllistenNumall/60)+"分";
                              }else{
@@ -302,10 +306,12 @@ function genLever(lever) {
                              syNum=syNumall-total;                         
                             if(leverPassCount<0){
                                 leverPassCount=0
-                            }    WrongSort.push(false);
+                            }          WrongSort.push(true);
                         singleUseTime.push(alllistenNum);
-                             alllistenNumall=alllistenNumall+alllistenNum;
-                             ErroneousTime = ErroneousTime+alllistenNum;
+                        levelArray.push(lever);
+
+                        alllistenNumall=alllistenNumall+alllistenNum;
+                        ErroneousTime = ErroneousTime+alllistenNum;
                              if(alllistenNumall>60){
                                  alllistenNumzg = parseInt(alllistenNumall/60)+"分";
                              }else{

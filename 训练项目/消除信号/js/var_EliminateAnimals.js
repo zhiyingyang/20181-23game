@@ -92,3 +92,5 @@ var allFruits_cn =
 var singleUseTime=new Array();
 //错误数组
 var WrongSort=new Array();
+//等级数组
+var levelArray=new Array();
