@@ -1,0 +1,198 @@
+<head>
+    <meta charset="UTF-8">
+    <title>追踪记忆训练</title>
+    <link rel="stylesheet" type="text/css" href="Bootpage.css">
+    <script src="jquery-3.0.0.min.js"></script>
+</head>
+<body>
+<style>
+    body{
+        height: 120%;
+        width: 100%;
+        overflow-y: auto;
+        position: relative;
+        background: url(img/bg2.png) no-repeat center center;
+        background-size: 100% 200000%;
+    }
+    .numWrap{
+        padding: 0 3%;
+    }
+
+</style>
+<div class="top">
+    <p class="fkjsq"><span>追踪记忆训练</span></p>
+    <a href="fruitIndex.html" class="goback"></a>
+</div>
+<div class="numWrap">
+    <div class="numWrapTop">
+        <span class="inputCheck"><input type="checkbox" id="checkbox-1-1" class="regular-checkbox" /><label for="checkbox-1-1"></label></span>
+        <span class="xlxm">训练项目</span>
+        <span class="xlxm">难度级别</span>
+        <span class="xlxmleft">排序</span>
+        <span class="xlxmleft">自动升级</span>
+    </div>
+    <ul class="xuList">
+       <li>
+           <input type="checkbox" id="checkbox-1-2" class="regular-checkbox" urlname="../三维效果/renderingIndex.html" /><label for="checkbox-1-2"></label>
+           <span class="xlxm">三维空间训练:镜子</span>
+           <div class="jdt">
+             <input type="range" index="0">
+             <span class="jblever">0</span>
+           </div>
+           <span class="px"><i class="pxtop pxtop1"></i><i class="pxbottom pxbottom2"></i></span>
+            <section class="hdinput">
+              <div class="checkbox">
+                <input type="checkbox"/>
+                <label></label>
+              </div>
+            </section>
+       </li>
+
+       <li>
+           <input type="checkbox" id="checkbox-1-3" class="regular-checkbox" urlname="../蔬菜/fruitIndex.html" /><label for="checkbox-1-3"></label>
+           <span class="xlxm">词语广度训练:蔬菜</span>
+           <span class="px"><i class="pxtop"></i><i class="pxbottom pxbottom2"></i></span>
+           <div class="jdt">
+             <input type="range" index="1">
+             <span class="jblever">0</span>
+           </div>
+            <section class="hdinput">
+              <div class="checkbox">
+                <input type="checkbox"/>
+                <label></label>
+              </div>
+            </section>
+       </li>
+
+       <li>
+           <input type="checkbox" id="checkbox-1-4" class="regular-checkbox" urlname="../水果/fruitIndex.html" /><label for="checkbox-1-4"></label>
+           <span class="xlxm">词语广度训练:水果</span>
+           <span class="px"><i class="pxtop"></i><i class="pxbottom"></i></span>
+           <div class="jdt">
+             <input type="range" index="2">
+             <span class="jblever">0</span>
+           </div>
+            <section class="hdinput">
+              <div class="checkbox">
+                <input type="checkbox"/>
+                <label></label>
+              </div>
+            </section>
+       </li>
+
+       <li>
+           <input type="checkbox" id="checkbox-1-5" class="regular-checkbox" urlname="../矩形/TargetTrainingIndex.html" />
+           <label for="checkbox-1-5"></label>
+           <span class="xlxm">矩阵召回任务:围棋</span>
+           <span class="px"><i class="pxtop"></i><i class="pxbottom"></i></span>
+           <div class="jdt">
+             <input type="range" index="3">
+             <span class="jblever">0</span>
+           </div>
+            <section class="hdinput">
+              <div class="checkbox">
+                <input type="checkbox"/>
+                <label></label>
+              </div>
+            </section>
+       </li>
+       <li>
+           <input type="checkbox" id="checkbox-1-6" class="regular-checkbox" urlname="../疯狂计算器/crazyCalculatorIndex.html" /><label for="checkbox-1-6"></label>
+           <span class="xlxm">记忆重塑/调遣训练:计算器</span>
+           <span class="px"><i class="pxtop"></i><i class="pxbottom"></i></span>
+           <div class="jdt">
+             <input type="range" index="4">
+             <span class="jblever">0</span>
+           </div>
+            <section class="hdinput">
+              <div class="checkbox">
+                <input type="checkbox"/>
+                <label></label>
+              </div>
+            </section>
+       </li>
+       <li>
+           <input type="checkbox" id="checkbox-1-7" class="regular-checkbox" urlname="../视听结合电话/SeeListenIndex.html" /><label for="checkbox-1-7"></label>
+           <span class="xlxm">视听结合训练:电话健</span>
+           <span class="px"><i class="pxtop"></i><i class="pxbottom"></i></span>
+           <div class="jdt">
+             <input type="range" index="5">
+             <span class="jblever">0</span>
+           </div>
+            <section class="hdinput">
+              <div class="checkbox">
+                <input type="checkbox"/>
+                <label></label>
+              </div>
+            </section>
+       </li>
+       <li>
+           <input type="checkbox" id="checkbox-1-8" class="regular-checkbox" urlname="../追踪记忆广度训练摩天轮/FerrisWheelIndex.html" /><label for="checkbox-1-8"></label>
+           <span class="xlxm">追踪记忆训练:摩天轮</span>
+           <span class="px"><i class="pxtop"></i><i class="pxbottom"></i></span>
+           <div class="jdt">
+             <input type="range" index="6">
+             <span class="jblever">0</span>
+           </div>
+            <section class="hdinput">
+              <div class="checkbox">
+                <input type="checkbox"/>
+                <label></label>
+              </div>
+            </section>
+       </li>
+       <li>
+           <input type="checkbox" id="checkbox-1-9" class="regular-checkbox" urlname="../消除信号/EliminateSignalIndex.html" /><label for="checkbox-1-9"></label>
+           <span class="xlxm">连连看:交通工具</span>
+           <span class="px"><i class="pxtop"></i><i class="pxbottom"></i></span>
+           <div class="jdt" index="7">
+             <input type="range">
+             <span class="jblever">0</span>
+           </div>
+            <section class="hdinput">
+              <div class="checkbox">
+                <input type="checkbox"/>
+                <label></label>
+              </div>
+            </section>
+       </li>
+       <li>
+           <input type="checkbox" id="checkbox-1-10" class="regular-checkbox" urlname="../寻找小动物第二版/findAnimalsIndex.html" /><label for="checkbox-1-10"></label>
+           <span class="xlxm">空间感知训练:找动物</span>
+           <span class="px"><i class="pxtop"></i><i class="pxbottom"></i></span>
+           <div class="jdt" index="8">
+             <input type="range">
+             <span class="jblever">0</span>
+           </div>
+            <section class="hdinput">
+              <div class="checkbox">
+                <input type="checkbox"/>
+                <label></label>
+              </div>
+            </section>
+       </li>
+    </ul>
+    <div class="numWrapBottom">
+        <p class="bottomleft">
+            <span>陪同训练者</span>
+            <select>
+               <option>父亲</option>
+               <option>母亲</option>
+            </select>
+        </p>
+        <button class="bottomright"></button>
+    </div>
+</div>
+</body>
+</html>
+<script type="text/javascript" src="Bootpage.js"></script>
+<script type="text/javascript" src="RangeSlider.js"></script>
+<script>
+var change = function($input) {
+    /*内容可自行定义*/
+    console.log("123");
+}
+
+$('input').RangeSlider({ min: 0,   max: 100,  step: 0.1,  callback: change});
+</script>
+<!-- 代码部分end -->

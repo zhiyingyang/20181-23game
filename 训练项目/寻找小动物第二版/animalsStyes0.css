@@ -1,0 +1,83 @@
+.phoneNumList li.bird{
+    position: absolute;
+    top: 38%;
+    left: 63%;
+
+}
+.phoneNumList li.bird img{
+    width: 80px;
+
+}
+.phoneNumList li.butterfly{
+    position: absolute;
+    top: 10%;
+    left: 39%;
+}
+.phoneNumList li.cow{
+    position: absolute;
+    top: 33%;
+    left: 73%;
+}
+.phoneNumList li.cow img{
+    width: 150px;
+}
+.phoneNumList li.elephant{
+    position: absolute;
+    bottom: 18%;
+    left: 48%;
+}
+.phoneNumList li.elephant img{
+    width: 176px;
+}
+.phoneNumList li.fish{
+    position: absolute;
+    bottom: 10%;;
+    left: 8%;
+}
+.phoneNumList li.fox{
+    position: absolute;
+    top:11%;
+    left: 57%;
+}
+.phoneNumList li.frog{
+    position: absolute;
+    bottom: 11%;
+    left:22%;
+}
+.phoneNumList li.giraffe{
+    position: absolute;
+    top: 9%;
+    left:8%;
+}
+.phoneNumList li.giraffe img{
+    width: 150px;
+}
+.phoneNumList li.monkey{
+    position: absolute;
+    top: 8%;
+    left:85%;
+}
+.phoneNumList li.monkey img{
+    width: 126px;
+}
+.phoneNumList li.panda{
+    position: absolute;
+    bottom: 23%;
+    right:10%;
+}
+.phoneNumList li.panda img{
+    width: 150px;
+}
+.phoneNumList li.rabbit{
+    position: absolute;
+    top: 23%;
+    left:31%;
+}
+.phoneNumList li.sheep{
+    position: absolute;
+    top: 38%;
+    left: 43%;
+}
+.phoneNumList li.sheep img{
+    width: 180px;
+}

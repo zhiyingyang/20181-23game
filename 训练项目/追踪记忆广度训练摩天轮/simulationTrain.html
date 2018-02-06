@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>摩天轮</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<link rel="stylesheet" type="text/css" href="index.css">
+<body>
+<style>
+    body{
+        height: auto;
+        overflow-y: hidden;
+        position: relative;
+    }
+    .phoneWrap{
+        position: relative;
+    }
+   
+    .phonebgWrap{
+         position: absolute;
+        top: 57%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        width: 42%;
+        height: 70%;
+    }
+    .phonebgWrap .phonebg{
+        position: absolute;
+        top: 33%;
+        width: 30%;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    .numWrap{
+        width: 100%;
+        position: absolute;
+        top: 0;
+        background: url(img/bg.png) no-repeat center center;
+        -webkit-background-size: 100% 100%;
+        background-size: 100% 100%;
+    }
+    .gameNum{
+        position: absolute;
+        left: 7%;
+        zoom:1;
+        display: none;
+    }
+    .gameScoreWrap{
+        position: absolute;
+        top: 30%;
+        right: 7%;
+        zoom:1;
+    }
+    .countDown {
+        position: absolute;
+        top: 70%;
+        right: 7%;
+        width: 70px;
+        height: auto;
+        background: #d4d7e0;
+        box-shadow: 0px 0px 7px rgba(0,0,0,0.7);
+        padding: 20px 0;
+        text-align: center;
+        /* display: none; */
+    }
+    .phoneNumListWrap{
+        position: absolute;
+        width: 60%;
+        top: 53%;
+        left: 50%;
+        transform: translate(-50%,-70%);
+        /* border: 2px solid #000;*/
+    }
+     
+    .phoneNumList{
+        width: 100%;
+        height: 100%;
+        border-radius: 5000px;
+        background: url(img/ferris_wheelyq.png) no-repeat center center;
+        background-size: 100%;
+    }
+    @-webkit-keyframes rotate{
+        from{-webkit-transform: rotate(0deg)}
+        to{-webkit-transform: rotate(360deg)}
+    }
+   @-moz-keyframes rotate{from{-moz-transform: rotate(0deg)}
+        to{-moz-transform: rotate(359deg)}
+    }
+    @-o-keyframes rotate{from{-o-transform: rotate(0deg)}
+        to{-o-transform: rotate(359deg)}
+    }
+    @keyframes rotate{from{transform: rotate(0deg)}
+        to{transform: rotate(359deg)}
+    }
+     @keyframes rotate2{
+        to{transform: rotate(0deg)}
+    }
+    .phoneNumList li{
+        width: 1.1rem;
+        height: 1.1rem;
+        background: url(img/cabin_n.png) no-repeat;
+        background-size: 100%;
+        border-radius: 5000px;
+        cursor: pointer;
+        position: absolute;
+    }
+    @keyframes turn {
+       from{-webkit-transform: rotate(0deg)}
+        to{-webkit-transform: rotate(-356deg)}
+    }
+    .phoneNumList li.check{
+        background: url(img/cabin_h.png) no-repeat;
+        background-size: 100%;
+    }
+    .phoneNumList li.check.zero{
+        background: url(img/cabin_h.png) no-repeat;
+        background-size: 100%;
+    }
+    .phoneNumList li.check.one{
+        background: url(img/cabin_h.png) no-repeat;
+        background-size: 100%;
+    }
+    .phoneNumList li.check.two{
+        background: url(img/cabin_h.png) no-repeat;
+        background-size: 100%;
+    }
+    .phoneNumList li.check.three{
+        background: url(img/cabin_h.png) no-repeat;
+        background-size: 100%;
+    }
+    .phoneNumList li.check.four{
+        background: url(img/cabin_h.png) no-repeat;
+        background-size: 100%;
+    }
+    .phoneNumList li.check.five{
+        background: url(img/cabin_h.png) no-repeat;
+        background-size: 100%;
+    }
+    .phoneNumList li.check.six{
+        background: url(img/cabin_h.png) no-repeat;
+        background-size: 100%;
+    }
+    .phoneNumList li.check.seven{
+        background: url(img/cabin_h.png) no-repeat;
+        background-size: 100%;
+    }
+     .phoneNumList li.check.nine{
+         background: url(img/cabin_h.png) no-repeat;
+         background-size: 100%;
+     }
+     .phoneNumList li.check.ten{
+        background: url(img/cabin_h.png) no-repeat;
+        background-size: 100%;
+    }
+    .phoneNumList li.check.eleven{
+        background: url(img/cabin_h.png) no-repeat;
+        background-size: 100%;
+    }
+     .phoneNumList li.check.twle{
+         background: url(img/cabin_h.png) no-repeat;
+         background-size: 100%;
+     }
+      .phoneNumList li.check.twle{
+         background: url(img/cabin_h.png) no-repeat;
+         background-size: 100%;
+     }
+     .phoneNumList li.check.zero{
+         background: url(img/cabin_h.png) no-repeat;
+         background-size: 100%;
+     }
+     .phoneNumList li.listen{
+         background: url(img/cabin_h.png) no-repeat;
+         background-size: 100%;
+     }
+    .Tips{
+        position: absolute;
+        top: 50%;
+        left:50%;
+        color: #fff;
+        transform: translate(-50%,-50%);
+        background: rgba(0,0,0,0.7);
+        display: none;
+        padding: 13px 35px;
+       font-size: 22px;
+       border-radius: 6px;
+    
+    }
+.LeverNum {
+    width: 100px;
+    position: absolute;
+    top: 50px;
+    right: 7%;
+    height: auto;
+    background: #909090;
+    padding: 15px;
+    /* display: none; */
+}
+.allEnd{
+    position: relative;
+    top: -2.5rem;
+    width: 100%;
+    display: none;
+}
+.allBengin{
+    position: absolute;
+    padding: 13px 35px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+    font-size: 22px;
+    border-radius: 6px;
+    background: rgba(0,0,0,0.7);
+    color: #fff;
+    display: none;
+}
+.end{
+    position: absolute;
+    top: 50%;
+    left:50%;
+    color: #333;
+    font-weight: 400;
+    transform: translate(-50%,-50%);
+    padding: 10px 20px;
+    font-size: 0.6rem;
+    line-height: 1.1rem;
+}
+.end .text{
+    display: inline-block;
+    width:3rem;
+    padding-right: 10px;
+    text-align: right;
+}
+ .end .endTip{
+    font-size: 0.75rem;
+    line-height:1.8rem;
+    text-align: center;
+}
+.LeverNum,.gameScoreWrap .gameScore,.countDown{
+    display: none;
+}
+#startDjs{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    color: #fff;
+    width: 100px;
+    height: 100px;
+    border-radius: 100px;
+    background: rgba(0,0,0,0.5);
+    font-size: 40px;
+    line-height: 100px;
+    text-align: center;
+}
+.top .leverCurrent{
+    height: 34px;
+    width: 138px;
+    background: url(img/level.png) no-repeat center center;
+    background-size: 100%;
+    position: absolute;
+    left: 30%;
+    top: 18%;
+}
+.top .leverCurrent i{
+    color: #AF5700;
+    line-height: 34px;
+    position: absolute;
+    top: 0;
+    right: 12px;
+    font-size: 18px;
+    font-style: normal;
+}
+.top .sycs{
+    height: 34px;
+    width: 138px;
+    background: url(img/times.png) no-repeat center center;
+    background-size: 100%;
+    position: absolute;
+    right: 30%;
+    top: 18%;
+}
+.top .sycs i{
+    color: #AF5700;
+    line-height: 34px;
+    position: absolute;
+    top: 0;
+    right: 12px;
+    font-size: 18px;
+    font-style: normal;
+}
+.top .ystime{
+    color: #AF5700;
+    line-height: 34px;
+    position: absolute;
+    top: 18%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 18px;
+    font-style: normal;
+}
+@media (min-width:760px)and (max-width:1100px) {
+    .phoneNumListWrap {
+	    top: 43%;
+	}
+	.phonebgWrap{
+		width: 82%;
+	}
+	.phoneNumList li {
+	    width: 1.5em;
+	    height: 1.5rem;
+    }
+}            
+</style>
+<div class="top">
+     <span class="leverCurrent">
+        <i class="leverCurrentNum">1</i>
+    </span>
+    <span class="sycs">
+        <i class="sycsNum">10</i>
+    </span>
+    <span class="ystime" id="timetext">0:0:0</span>
+    <a href="FerrisWheelIndex.html" class="goback"></a>
+</div>
+<div class="numWrap">
+    <div class="phonebgWrap">
+        <img class="phonebg" src="img/ferris_wheel_base.png">
+         <div class="phoneNumListWrap">
+            <ul class="phoneNumList" id="phoneNumList">
+           
+            </ul>
+    </div>
+    </div>
+  <!--   <ul class="gameNum" id="gmeNum">
+        <li id="12" dataNum="12">12</li>
+        <li id="11" dataNum="11">11</li>
+        <li id="10" dataNum="10">10</li>
+        <li id="9" dataNum="9">9</li>
+        <li id="8" dataNum="8">8</li>
+        <li id="7" dataNum="7">7</li>
+        <li id="6" dataNum="6">6</li>
+        <li id="5" dataNum="5">5</li>
+        <li id="4" dataNum="4">4</li>
+        <li id="3" dataNum="3">3</li>
+        <li id="2" dataNum="2">2</li>
+        <li id="1" dataNum="1">1</li>
+    </ul> -->
+    <div class="LeverNum" id="LeverNum">
+        <p>成功次数：<span id="LeverNumT"></span></p>
+        <p>失败次数：<span id="LeverNumB"></span></p>
+    </div>
+  <div class="gameScoreWrap">
+      <div class="gameScore">
+          <p class="text">得分</p>
+          <p class="score" id="allScore">0</p>
+      </div>
+      <!-- <button onclick="startGame()">开始</button> -->
+  </div>
+   <div class="countDown">
+      <p class="text">倒计时</p>
+      <p class="time" id="time">60</p>
+  </div>
+    <div class="Tips">信息错误</div>
+    <div id="startDjs">3</div>
+    <div class="allBengin">开始</div>
+</div>
+<div class="allEnd">
+    <div class="end">
+        <p class="endTip">恭喜你,全部通关成功</p>
+        <p><span class="text">总次数:</span><span class="endT"></span></p>
+        <p><span class="text">正确次数:</span><span class="endS"></span></p>
+        <p><span class="text">错误次数:</span><span class="endF"></span></p>
+        <p><span class="text">初始等级:</span><span class="cslever"></span></p>
+        <p><span class="text">最高等级:</span><span class="glever"></span></p>
+        <p><span class="text">结束等级:</span><span class="endlever"></span></p>
+    </div>
+</div>
+</body>
+</html>
+<script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
+<script type="text/javascript" src="js/var_FerrisWheel.js"></script>
+<script type="text/javascript" src="js/FerrisWheel2.js"></script>

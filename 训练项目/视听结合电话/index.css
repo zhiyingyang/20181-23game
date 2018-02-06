@@ -1,0 +1,315 @@
+html,body{width: 100%;height: 100%;}
+body,
+    ul,
+    li,
+    p,
+    div {
+        padding: 0;
+        margin: 0;
+        list-style: none;
+    }
+html{font-size: 250%;}
+/*40px=1rem*/
+@media (min-height:390px) and (max-height:450px){
+    html { font-size:  210%;}
+}
+@media (min-height:450px) and (max-height:650px){
+    html { font-size:  251%;}
+}
+@media (min-height:650px) and (max-height:800px){
+    html { font-size:  280%;}
+}
+@media (min-height:800px) and (max-height:950px){
+    html { font-size: 310%;}
+}
+@media (min-height:950px){
+    html { font-size: 340%;}
+}
+body{
+
+}
+ body{
+        height: auto;
+        overflow-y: auto;
+        position: relative;
+        background: url(img/bg2.png) no-repeat center center;
+        background-size: 100% 100%;
+    }
+    .block-center:after{
+        content: '';
+        display: inline-block;
+        height: 100%;width: 0;
+        vertical-align: middle;
+    }
+    
+    .index_1:after {
+        content: '1';
+    }
+    
+    .index_2:after {
+        content: '2';
+    }
+    
+    .index_3:after {
+        content: '3';
+    }
+    
+    .index_4:after {
+        content: '4';
+    }
+    
+    .index_5:after {
+        content: '5';
+    }
+    
+    .index_6:after {
+        content: '6';
+    }
+    
+    .index_7:after {
+        content: '7';
+    }
+    
+    .index_8:after {
+        content: '8';
+    }
+    
+    .index_9:after {
+        content: '9';
+    }
+    
+    .index_10:after {
+        content: '10';
+    }
+    
+    .index_11:after {
+        content: '11';
+    }
+    
+    .index_12:after {
+        content: '12';
+    }
+    
+    .index_13:after {
+        content: '13';
+    }
+    
+    .index_14:after {
+        content: '14';
+    }
+    
+    .index_15:after {
+        content: '15';
+    }
+    
+    .index_16:after {
+        content: '16';
+    }
+    
+    .index_17:after {
+        content: '17';
+    }
+    .games{
+        width:70%;
+        height:auto;
+        margin: 0 auto;
+        position: relative;
+    }
+ .top{
+        height: 2.5rem;
+        width: 100%;
+        position: relative;
+        z-index: 2;
+        background: url(img/head_bg.png) no-repeat top center;
+        background-size: 100% 70%;
+    }
+ .top .fkjsq{
+       position: absolute;
+       top: 0;
+       text-align: center;
+       width: 100%;
+       font-size: 24px;
+       height: 62%;
+       color: #AF5700;
+  }
+  .top .fkjsq span{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+  }
+ .top .goback{
+    display: block;
+    background: url(img/btn_back.png) no-repeat;
+    height: 2.3rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 15%;
+    background-size: contain;
+ }
+.gameImgList{
+    width:100%;
+    height: auto;
+    overflow: hidden;
+    zoom: 1;
+}
+.gameImgList li{
+    float: left;
+    width: 25%;
+    height: 190px;
+    /*border: 1px solid #000;*/
+    padding:4px;
+    box-sizing:border-box;
+    -moz-box-sizing:border-box;
+    position: relative;
+    cursor: pointer;
+}
+.gameImgList li img{
+  width:70%;
+  height: auto;
+  margin: 0 10%;
+
+}
+.gameImgList li.check {
+    animation: myfirst 1s;
+    -webkit-animation: myfirst 1s; /* Safari 与 Chrome */
+}
+.gameImgList li.check img{
+   display:none;
+}
+.gameImgList li:after {
+    position: absolute;
+    top: -1000px;
+    left:-1000px;
+    display: block;
+    text-align: center;
+    width: 1%;
+    line-height: 10px;
+    color:transparent;
+    font-size: 80px;
+    background: rgba(0, 0, 0, 0);
+}
+li:after{
+     color:transparent;
+}
+@keyframes myfirst
+{
+    0%   {transform:scale(0.6);}
+    50%  {transform:scale(0.3);}
+    100% {transform:scale(1);}
+}
+@-webkit-keyframes myfirst /* Safari 与 Chrome */
+{
+    0%   {transform:scale(0.5);}
+    50%  {transform:scale(0.2);}
+    100% {transform:scale(1);}
+}
+.gameNum{
+    width: 50px;
+    background: #d4d7e0;
+    height: auto;
+    position: absolute;
+    top: 50px;
+    left: -80px;
+    border-radius: 5px;
+    box-shadow:0px 0px 7px rgba(0,0,0,0.7);
+     top: 50%;
+    transform: translateY(-46%);
+}
+.gameNum li{
+    width: 50px;
+    height: 45px;
+    line-height:45px;
+    font-size: 20px;
+    font-weight: bold;
+    display: block;
+    text-align: center;
+    background: #d4d7e0;
+
+}
+.gameNum li.bgc{
+    background: #109df7;
+}
+.LeverNum{
+    width:100px;
+    position: absolute;
+    top: 50px;
+    right: -130px;
+    height: auto;
+    background: #909090;
+    padding: 15px;
+    /*display: none;*/
+}
+.LeverNum p{
+    line-height: 30px;
+    font-size: 17px;
+
+}
+.gameScoreWrap{
+    position: absolute;
+    top: 180px;
+    right: -100px;
+    width: 70px;
+    height: auto;
+
+}
+.gameScoreWrap .gameScore{
+    background: #d4d7e0;
+    box-shadow:0px 0px 7px rgba(0,0,0,0.7);
+    padding-bottom: 30px;
+    display: none;
+}
+.gameScoreWrap .gameScore .text{
+   font-size: 20px;
+    line-height: 46px;
+    text-align: center;
+}
+.gameScoreWrap .gameScore .score{
+  line-height: 86px;
+    text-align: center;
+    font-size: 40px;
+    color: #109df7;
+}
+.gameScoreWrap button{
+    width: 70px;
+    line-height: 26px;
+    margin-top: 6px;
+    background: #109df7;
+    color: #fff;
+    font-size: 18px;
+    border: none;
+    border-radius: 6px;
+    box-shadow:0px 0px 5px rgba(0,0,0,0.5);
+}
+.countDown{
+    position: absolute;
+    top: 420px;
+    right: -100px;
+    width: 70px;
+    height: auto;
+    background: #d4d7e0;
+    box-shadow:0px 0px 7px rgba(0,0,0,0.7);
+    padding: 20px 0;
+    text-align: center;
+    /*display: none;*/
+}
+.countDown .time{
+    line-height: 80px;
+    font-size: 40px;
+    color: #109df7;
+}
+#errormsg{
+    position: absolute;
+    top: 50%;
+    left:50%;
+    color: #fff;
+    transform: translate(-50%,-50%);
+    padding: 10px 20px;
+    font-size: 20px;
+    line-height: 30px;
+    background: rgba(0,0,0,0.7);
+    display: none;
+}
+
+

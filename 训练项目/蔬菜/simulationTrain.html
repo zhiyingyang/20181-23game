@@ -1,0 +1,176 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>词语广度训练</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<link rel="stylesheet" type="text/css" href="index.css">
+<body>
+<style>
+    body{
+        height: 100%;
+        overflow-y: hidden;
+        position: relative;
+    }
+    .LeverNum,.gameScoreWrap,.countDown,.gameNum,.gameImgList{
+        display: none;
+    }
+#startDjs{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    color: #fff;
+    width: 100px;
+    height: 100px;
+    border-radius: 100px;
+    background: rgba(0,0,0,0.5);
+    font-size: 40px;
+    line-height: 100px;
+    text-align: center;
+}
+.allBengin{
+    position: absolute;
+    padding: 13px 35px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+    font-size: 22px;
+    border-radius: 6px;
+    background: rgba(0,0,0,0.7);
+    color: #fff;
+    display: none;
+}
+.top .leverCurrent{
+    height: 34px;
+    width: 138px;
+    background: url(img/level.png) no-repeat center center;
+    background-size: 100%;
+    position: absolute;
+    left: 30%;
+    top: 18%;
+}
+.top .leverCurrent i{
+    color: #AF5700;
+    line-height: 34px;
+    position: absolute;
+    top: 0;
+    right: 12px;
+    font-size: 18px;
+    font-style: normal;
+}
+.top .sycs{
+    height: 34px;
+    width: 138px;
+    background: url(img/times.png) no-repeat center center;
+    background-size: 100%;
+    position: absolute;
+    right: 30%;
+    top: 18%;
+}
+.top .sycs i{
+    color: #AF5700;
+    line-height: 34px;
+    position: absolute;
+    top: 0;
+    right: 12px;
+    font-size: 18px;
+    font-style: normal;
+}
+.top .ystime{
+    color: #AF5700;
+    line-height: 34px;
+    position: absolute;
+    top: 18%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 18px;
+    font-style: normal;
+}       
+</style>
+<div class="top">
+    <span class="leverCurrent">
+        <i class="leverCurrentNum">1</i>
+    </span>
+    <span class="sycs">
+        <i class="sycsNum">10</i>
+    </span>
+    <span class="ystime" id="timetext">0:0:0</span>
+    <a href="fruitIndex.html" class="goback"></a>
+</div>
+<div class="games">
+    <ul class="gameImgList" id="showFruit">
+    </ul>
+   <!--  <ul class="gameNum" id="gmeNum">
+        <li id="12" dataNum="12">12</li>
+        <li id="11" dataNum="11">11</li>
+        <li id="10" dataNum="10">10</li>
+        <li id="9" dataNum="9">9</li>
+        <li id="8" dataNum="8">8</li>
+        <li id="7" dataNum="7">7</li>
+        <li id="6" dataNum="6">6</li>
+        <li id="5" dataNum="5">5</li>
+        <li id="4" dataNum="4">4</li>
+        <li id="3" dataNum="3">3</li>
+        <li id="2" dataNum="2">2</li>
+        <li id="1" dataNum="1">1</li>
+    </ul> -->
+    <div class="LeverNum" id="LeverNum">
+        <p>成功次数：<span id="LeverNumT"></span></p>
+        <p>失败次数：<span id="LeverNumB"></span></p>
+    </div>
+  <div class="gameScoreWrap">
+      <div class="gameScore">
+          <p class="text">得分</p>
+          <p class="score" id="allScore">0</p>
+      </div>
+      <!--<button onclick="Game.start()">开始</button>-->
+  </div>
+   <div class="countDown">
+      <p class="text">倒计时</p>
+      <p class="time" id="time">60</p>
+  </div>
+    <div class="audios">
+        <audio id="ad_bean_sprout" src="yuyin/assets/豆芽.m4a" type="audio/mpeg"></audio>
+        <audio id="ad_cabbage" src="yuyin/assets/白菜.m4a" type="audio/mpeg"></audio>
+        <audio id="ad_carrot" src="yuyin/assets/胡萝卜.m4a" type="audio/mpeg"></audio>
+        <audio id="ad_celery" src="yuyin/assets/芹菜.m4a" type="audio/mpeg"></audio>
+        <audio id="ad_corn" src="yuyin/assets/玉米.m4a" type="audio/mpeg"></audio>
+        <audio id="ad_cucumber" src="yuyin/assets/黄瓜.m4a" type="audio/mpeg"></audio>
+        <audio id="ad_eggplant" src="yuyin/assets/茄子.m4a" type="audio/mpeg"></audio>
+        <audio id="ad_garlic" src="yuyin/assets/大蒜.m4a" type="audio/mpeg"></audio>
+        <audio id="ad_ginger" src="yuyin/assets/生姜.m4a" type="audio/mpeg"></audio>
+        <audio id="ad_green_pepper" src="yuyin/assets/青椒.m4a" type="audio/mpeg"></audio>
+        <audio id="ad_lotos" src="yuyin/assets/莲藕.m4a" type="audio/mpeg"></audio>
+        <audio id="ad_mushroom" src="yuyin/assets/蘑菇.m4a" type="audio/mpeg"></audio>
+        <audio id="ad_onion" src="yuyin/assets/洋葱.m4a" type="audio/mpeg"></audio>
+        <audio id="ad_peas" src="yuyin/assets/豌豆.m4a" type="audio/mpeg"></audio>
+        <audio id="ad_potato" src="yuyin/assets/土豆.m4a" type="audio/mpeg"></audio>
+        <audio id="ad_pumpkin" src="yuyin/assets/南瓜.m4a" type="audio/mpeg"></audio>
+         <audio id="ad_spinach" src="yuyin/assets/菠菜.m4a" type="audio/mpeg"></audio>
+        <audio id="ad_ternip" src="yuyin/assets/白萝卜.m4a" type="audio/mpeg"></audio>
+        <audio id="ad_tomato" src="yuyin/assets/西红柿.m4a" type="audio/mpeg"></audio>
+    </div>
+</div>
+<div class="Tips" id="errormsg">信息错误</div>
+<div id="startDjs">3</div>
+<div class="allBengin">开始</div>
+<div class="allEnd">
+    <div class="end">
+         <p class="endTip">恭喜你,全部通关成功</p>
+        <p><span class="text">总次数:</span><span class="endT"></span></p>
+        <p><span class="text">正确次数:</span><span class="endS"></span></p>
+        <p><span class="text">错误次数:</span><span class="endF"></span></p>
+        <p><span class="text">初始等级:</span><span class="cslever"></span></p>
+        <p><span class="text">最高等级:</span><span class="glever"></span></p>
+        <p><span class="text">结束等级:</span><span class="endlever"></span></p>
+    </div>
+</div>
+<audio id="endTime" src="yuyin/9273.wav" type="audio/mav"></audio>
+</body>
+</html>
+<script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
+<script type="text/javascript" src="js/var_fruit.js"></script>
+<script type="text/javascript" src="js/fruit2.js"></script>

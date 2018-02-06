@@ -1,0 +1,96 @@
+<head>
+    <meta charset="UTF-8">
+    <title>找动物</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+<style>
+    body{
+        height: 100%;
+        width: 100%;
+        overflow-y: hidden;
+        position: relative;
+        background: url(img/bg2.png) no-repeat center center;
+        background-size: 100% 100%;
+    }
+    .numWrap{
+        width:60%;
+        margin: 3% auto 0;
+        height: 180px;
+        padding: 200px 6% 100px;
+        background: url(img/guidepageinfo_bg.png) no-repeat center center;
+        background-size: 100% 100%;
+        position: relative;
+    }
+    .numWrap p{
+        width: 100%;
+        height: 100%;
+        font-size: 24px;
+        line-height: 34px;
+        text-indent: 2em;
+    }
+    .numWrap .btnleft{
+        display: inline-block;
+        text-decoration: none;
+         width: 130px;
+         height: 50px;
+        background: url(img/btn_simulation_training.png) no-repeat center center;
+        background-size: 100%;
+        position: absolute;
+        bottom: 50px;
+        left: 50%;
+        transform: translateX(-120%);
+    }
+     .numWrap .btnleft.btnright{
+        display: inline-block;
+        text-decoration: none;
+         width: 130px;
+         height: 50px;
+        background: url(img/btn_start.png) no-repeat center center;
+        background-size: 100%;
+        position: absolute;
+        bottom: 50px;
+        left: 50%;
+        transform: translateX(40%);
+    }
+    .numWrap .btn a.right{
+        float: right;
+        text-decoration: none;
+        padding: 8px 12px;
+        background: #51a1e8;
+        color: #fff;
+        border-radius: 4px;
+        font-size: 16px;
+    }
+    .numWrap .iconleft{
+        position: absolute;
+        top: 50px;
+        left: 50%;
+        transform: translateX(-50%);
+        display: inline-block;
+        width: 100px;
+        height: 100px;
+        background: url(img/ico_information.png) no-repeat center center;
+        background-size: 100%;
+    }
+    @media (min-width:760px)and (max-width:1100px) {
+	    .numWrap {
+		    top: 20%;
+		}
+	}   
+</style>
+<div class="top">
+    <p class="fkjsq"><span>找动物</span></p>
+    <a href="../引导页/Bootpage.html" class="goback"></a>
+</div>
+<div class="numWrap">
+    <p>小动物在农场里快乐的生活，但是忽的一下就全部不见了！你还记得小动物们在什么地方吗？如果你知道，就请你按先后顺序找出来吧！</p>
+    <span class="iconleft"></span>
+    <a  class="btnleft" href="simulationTrain.html"></a>
+    <a  class="btnleft btnright" href="findAnimals.html"></a>
+</div>
+</body>
+<audio autoplay>
+    <source src="yuyin/空间感知训练找动物.m4a" type="audio/mpeg">
+</audio>
+</html>

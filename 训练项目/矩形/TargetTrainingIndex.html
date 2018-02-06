@@ -1,0 +1,101 @@
+<head>
+    <meta charset="UTF-8">
+    <title>矩阵召回任务</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<link rel="stylesheet" type="text/css" href="index.css">
+<body>
+<style>
+    body{
+        height: 100%;
+        width: 100%;
+        overflow-y: hidden;
+        position: relative;
+        background: url(img/bg.png) no-repeat center center;
+        background-size: 100% 100%;
+    }
+    .top{
+        background: url(img/head_title_bg.png) no-repeat top center;
+        background-size: 100% 70%;
+    }
+    .numWrap{
+        width:60%;
+        margin: 3% auto 0;
+        height: 180px;
+        padding: 200px 6% 100px;
+        background: url(img/guidepageinfo_bg.png) no-repeat center center;
+        background-size: 100% 100%;
+        position: relative;
+    }
+    .numWrap p{
+        width: 100%;
+        height: 100%;
+        font-size: 24px;
+        line-height: 34px;
+        text-indent: 2em;
+    }
+    .numWrap .btnleft{
+        display: inline-block;
+        text-decoration: none;
+         width: 130px;
+         height: 50px;
+        background: url(img/btn_simulation_training.png) no-repeat center center;
+        background-size: 100%;
+        position: absolute;
+        bottom: 50px;
+        left: 50%;
+        transform: translateX(-120%);
+    }
+     .numWrap .btnleft.btnright{
+        display: inline-block;
+        text-decoration: none;
+         width: 130px;
+         height: 50px;
+        background: url(img/btn_start.png) no-repeat center center;
+        background-size: 100%;
+        position: absolute;
+        bottom: 50px;
+        left: 50%;
+        transform: translateX(40%);
+    }
+    .numWrap .btn a.right{
+        float: right;
+        text-decoration: none;
+        padding: 8px 12px;
+        background: #51a1e8;
+        color: #fff;
+        border-radius: 4px;
+        font-size: 16px;
+    }
+    .numWrap .iconleft{
+        position: absolute;
+        top: 50px;
+        left: 50%;
+        transform: translateX(-50%);
+        display: inline-block;
+        width: 100px;
+        height: 100px;
+        background: url(img/ico_information.png) no-repeat center center;
+        background-size: 100%;
+    }
+    @media (min-width:760px)and (max-width:1050px) {
+    .numWrap {
+      top: 18%;
+	}	
+}
+</style>
+<div class="top">
+    <p class="fkjsq"><span>矩阵召回任务</span></p>
+    <a href="../引导页/Bootpage.html" class="goback"></a>
+</div>
+<div class="numWrap">
+    <p>你将会看到一系列方块格子，翻过去之后有的格子会变红，你需要记住变色格子的位置，当他们翻回来的时候，你需要把刚才那些变红的格子点出来，明白了吗？来试试吧！</p>
+    <span class="iconleft"></span>
+    <a  class="btnleft" href="simulationTrain.html"></a>
+    <a  class="btnleft  btnright" href="TargetTraining.html"></a>
+</div>
+</body>
+<audio autoplay>
+    <source src="yuyin/矩阵召回任务围棋.m4a" type="audio/mpeg">
+</audio>
+</html>

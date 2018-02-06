@@ -1,0 +1,381 @@
+html,body{width: 100%;height: 100%;}
+body,
+    ul,
+    li,
+    p,
+    div {
+        padding: 0;
+        margin: 0;
+        list-style: none;
+    }
+html{font-size: 250%;}
+/*40px=1rem*/
+@media (min-height:650px) {
+    html { font-size: 260%;}
+}
+@media (min-height:650px) and (max-height:800px){
+    html { font-size:  280%;}
+}
+@media (min-height:800px) and (max-height:950px){
+    html { font-size: 310%;}
+}
+@media (min-height:950px){
+    html { font-size: 340%;}
+}
+ .top{
+        height: 2.5rem;
+        width: 100%;
+        position: relative;
+        z-index: 2;
+        background: url(img/head_title_bg.png) no-repeat top center;
+        background-size: 100% 70%;
+    }
+ .top .fkjsq{
+       position: absolute;
+       top: 0;
+       text-align: center;
+       width: 100%;
+       font-size: 24px;
+       height: 62%;
+       color: #AF5700;
+  }
+  .top .fkjsq span{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+  }
+ .top .goback{
+    display: block;
+    background: url(img/btn_back.png) no-repeat;
+    height: 2.6rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-size: contain;
+ }
+ /*input按钮check*/
+label {
+    display: inline;
+}
+.regular-checkbox {
+    display: none;
+}
+.regular-checkbox + label {
+    background-color: #fafafa;
+    border: 1px solid #cacece;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05), inset 0px -15px 10px -12px rgba(0,0,0,0.05);
+    padding: 13px;
+    border-radius: 3px;
+    display: inline-block;
+    position: relative;
+}
+.regular-checkbox + label:active, .regular-checkbox:checked + label:active {
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05), inset 0px 1px 3px rgba(0,0,0,0.1);
+}
+.regular-checkbox:checked + label {
+    background-color: #fff;
+    border: 1px solid #AF5700;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05), inset 0px -15px 10px -12px rgba(0,0,0,0.05), inset 15px 10px -12px rgba(255,255,255,0.1);
+    color: #99a1a7;
+}
+.regular-checkbox:checked + label:after {
+    content: '\2714';
+    font-size: 28px;
+    position: absolute;
+    top: -5px;
+    left: 3px;
+    color: #AF5700;
+}
+.big-checkbox + label {
+    padding: 20px;
+}
+.big-checkbox:checked + label:after {
+    font-size: 28px;
+    left: 6px;
+}
+.numWrapTop{
+    border-bottom: 1px solid #AF5700;
+    overflow: hidden;
+    zoom:1;
+}
+.xlxm{
+   width: 180px; 
+   font-size: 20px;
+   display: inline-block;
+   vertical-align: 9px;
+   margin-left: 3%;
+   margin-right: 5%;
+   color: #AF5700;
+}
+ul{
+    border-bottom: 1px solid #AF5700;
+}
+ul .xlxm{
+   font-size: 20px;
+   font-weight: bold;
+}
+.lanren{
+    width:30%;
+    display: inline-block;
+    border-bottom: none;
+    margin-left: 3%;
+}
+.scale_panel{
+    color:#999;
+    width:100%;
+    position:absolute;
+    line-height:18px;
+    left:0px;
+    top:12px;
+}
+.scale_panel .r{float:right;}
+.scale span{
+    cursor: pointer;
+    display: block;
+    width: 40px;
+    height: 36px;
+    background: url(img/progressbar_star.png) no-repeat center center;
+    -webkit-background-size: 100%;
+    background-size: 100%;
+    position: absolute;
+    top: 0px;
+    left: 5%;
+    color: #AF5700;
+    font-style: normal;
+    font-size: 18px;
+    line-height: 38px;
+    text-align: center;
+}
+.scale{
+    height: 3px; 
+    position: relative; 
+    border-radius: 3px;
+    height: 36px;
+    background: url(img/progressbar_n.png) no-repeat center center;
+    background-size: 100% 100%;
+}
+.scale div{ 
+    background-repeat: repeat-x; 
+    background-color: #3BE3FF; 
+    width: 8.3%; 
+    position: absolute; 
+    height: 20px;
+    left: 5px; 
+    bottom: 8px;
+    background: url(img/progressbar_h.png) no-repeat center center;
+    background-size: 100% 100%;
+  }
+.lanren .lanrenOne{font-size:12px;line-height:50px;position:relative;height:50px;list-style:none;}
+.jdt{
+  display: inline-block;
+  position: relative;
+  top: -10px;
+  margin-left: 3%;
+  width: 30%;
+  height: 36px;
+  background: url(img/progressbar_n.png) no-repeat center center;
+  background-size: 100% 100%;
+}
+.jdt input[type=range] {
+    -webkit-appearance: none;
+    width: 97%;
+    height: 20px;
+    border-radius: 10px; /*这个属性设置使填充进度条时的图形为圆角*/
+    background: url(img/progressbar_h.png) no-repeat left center;
+    background-size: 2% 100%;
+    position: relative;
+    top: 5px;
+    left: 5px;
+}
+.jdt input[type=range]::-webkit-slider-runnable-track {
+    height: 15px;
+    /*border-radius: 10px;*/ /*将轨道设为圆角的*/
+}
+.jdt input[type=range]:focus {
+    outline: none;
+}
+.jdt input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    height: 36px;
+    width: 50px;
+    margin-top: -10px; /*使滑块超出轨道部分的偏移量相等*/
+    /*background: url(img/progressbar_star.png) no-repeat center center;
+    background-size: contain;*/
+    cursor: pointer;
+    position: absolute;
+    left: 50%;
+}
+.jdt .jblever{
+    display: block;
+    height: 36px;
+    width: 45px;
+    position: absolute;
+    font-size: 18px;
+    line-height: 36px;
+    text-align: center;
+    left: 0%;
+    top: 0;
+    color: #AF5700;
+     background: url(img/progressbar_star.png) no-repeat center center;
+    background-size: contain;
+    cursor: pointer;
+    pointer-events:none;
+}
+.xlxmleft{
+    float: right;
+    width: 100px; 
+   font-size: 20px;
+   display: inline-block;
+   line-height: 53px;
+   margin-left: 5%;
+   color: #AF5700;
+}
+.hdinput{
+    width: 100px;
+    margin-top:10px;
+}
+.hdinput .checkbox label:after {
+    content: '';
+    position: absolute;
+    width: 22px;
+    height: 22px;
+    border-radius: 100%;
+    left: 0;
+    top: -5px;
+    z-index: 2;
+    background: #fff;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+}
+.hdinput .checkbox label {
+    cursor: pointer;
+  background: url(img/switch_bg.png) no-repeat center center;
+  -webkit-background-size: 100% 100%;
+  background-size: 100% 100%;
+  border: 1px solid #eee;
+  height: 28px;
+}
+.hdinput .checkbox label:after {
+  background: #bbb;
+  top: 3px;
+  left: 5px;
+  width: 22px;
+  height: 22px;
+}
+.hdinput .checkbox input:checked + label:after {
+  background: url(img/switch_yes.png) no-repeat center center;
+  -webkit-background-size: 100% 100%;
+  background-size: 100% 100%;
+  left: 31px;
+}
+.hdinput .checkbox label:after {
+    background: url(img/switch_no.png) no-repeat center center;
+  -webkit-background-size: 100% 100%;
+  background-size: 100% 100%;
+    top: -3px;
+    left: -4px;
+    width: 32px;
+    height: 32px;
+}
+section {
+    display: inline-block;
+    position: relative;
+}
+.hdinput .checkbox {
+    position: relative;
+    display: block;
+    margin:0 auto;
+    width: 62px;
+}
+.hdinput .checkbox input {
+    position: absolute;
+    left:0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 5;
+    opacity: 0;
+    cursor: pointer;
+}
+.hdinput input[type="checkbox"],.hdinput input[type="radio"] {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+.hdinput .checkbox label {
+   background: url(img/switch_bg.png) no-repeat center center;
+  -webkit-background-size: 100% 100%;
+  background-size: 100% 100%;
+    border: 1px solid #eee;
+    height: 26px;
+    width: 60px;
+    position: relative;
+    display: inline-block;
+    border-radius: 26px;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+}
+li{
+    overflow: hidden;
+    zoom:1;
+}
+.px,.hdinput{
+    float: right;
+    width: 100px;
+}
+.px{
+    height: 53px;
+    margin-left:5%;
+}
+.px i{
+    display: block;
+    cursor: pointer;
+}
+.px i.pxtop{
+    width: 40px;
+    height: 22px;
+    background: url(img/compositor_up.png) no-repeat center center;
+    -webkit-background-size: 76%;
+    background-size: 76%;
+    margin-bottom: 5px;
+    margin-top: 5px;
+}
+.px i.pxbottom{
+    width: 40px;
+    height: 22px;
+    background: url(img/compositor_down.png) no-repeat center center;
+    -webkit-background-size: 76%;
+    background-size: 76%;
+}
+.numWrapBottom{
+    font-size: 20px;
+    line-height: 40px;
+    overflow: hidden;
+    zoom:1;
+    margin-top:10px;
+}
+.numWrapBottom .bottomleft{ 
+    float: left;
+}
+.numWrapBottom .bottomleft select{ 
+   color: #AF5700;
+   font-size: 18px;
+   height: 30px;
+   width: 70px;
+   background: url(img/btn_attendant.png) no-repeat center center;
+   -webkit-background-size: 100%;
+   background-size: 100%;
+   border: none;
+}
+.numWrapBottom .bottomright{ 
+    float: right;
+    width: 110px;
+    height: 50px;
+    border: none;
+    background: url(img/btn_start.png) no-repeat center center;
+    -webkit-background-size: 100%;
+    background-size: 100%;
+}
